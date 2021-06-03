@@ -1,0 +1,22 @@
+            {% extends 'base.html' %}
+            
+            {% block body %}
+            <!-- Cards -->
+            {% for i in response %}
+            <div class="card my-2" style="width: 18rem;">
+                <img src="{{i.links.mission_patch}}" class="card-img-top" alt="..." height="200" width="300">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.mission_name}} #{{i.flight_number}}</h5>
+                  {% comment %} <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> {% endcomment %}
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Mission Ids:</strong> {{i.mission_id}}</li>
+                    <li class="list-group-item"><strong>Launch Year:</strong> {{i.launch_year}}</li>
+                    <li class="list-group-item"><strong>Successful Launch:</strong> {{i.launch_success}}</li>
+                    <li class="list-group-item"><strong>Successful Landing:</strong> {{i.land_success}}</li>
+                    {% comment %} <li class="list-group-item">A third item</li> {% endcomment %}
+                  </ul>
+                  {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+            </div>
+            {% endfor %}
+        {% endblock body %}
